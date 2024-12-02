@@ -110,7 +110,47 @@
     height: 18vh;
     background-color: #2a587f;
 }
+.windows-left {
+    position: absolute;
+    left: 6px;
+    top: 10vh;
+    display: flex;
+    width: 12vw;
+    height: 15vh;
+    flex-wrap: wrap;
+}
+.windows-right {
+    position: absolute;
+    right: 6px;
+    top: 10vh;
+    display: flex;
+    width: 12vw;
+    height: 15vh;
+    flex-wrap: wrap;
+}
+.wind-1 , .wind-2, .wind-3, .wind-4, .wind-5, .wind-6, .wind-7, .wind-8{
+    width: 47%;
+    height: 7vh;
+    background-color: #2a587f;
+    margin: auto;
+}
+.windows-top {
+    position: absolute;
+    /*! right: 6px; */
+    top: 5vh;
+    display: flex;
+    width: 30vw;
+    height: 28vh;
+    flex-wrap: wrap;
+    margin: auto;
+}
 
+.wind-9, .wind-10, .wind-11, .wind-12, .wind-13, .wind-14, .wind-15, .wind-16  {
+    width: 26%;
+    height: 8vh;
+    background-color: #2a587f;
+    margin: auto;
+}
 .tage-3 {
     width: 20vw;
     height: 10vh;
@@ -151,4 +191,3 @@
     right: 0vw;
     bottom: -7vh;
 }
-
