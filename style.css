@@ -96,6 +96,8 @@
 .first-bare, .second-bare {
     display: flex;
     gap: 10px;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .min_window_1, .min_window_2, .min_window_3, .min_window_4 {
     margin: 10px 10px;
@@ -106,10 +108,21 @@
 }
 .max_window_1, .max_window_2, .max_window_3, .max_window_4 {
     margin: 10px 10px;
-    width: 8vw;
+    width: 14vw;
     height: 18vh;
     background-color: #2a587f;
+    position: relative ;
 }
+
+.mini-shadow1 {
+
+    width: 100%;
+    height: 10vh;
+    background-color: #abd8ff92;
+    rotate: 45deg;
+    position: absolute;
+}
+
 .windows-left {
     position: absolute;
     left: 6px;
@@ -135,6 +148,7 @@
     height: 10vh;
     background-color: #2a587f;
     margin: auto;
+    border: 5px solid white;
 }
 .windows-top {
     position: absolute;
@@ -152,6 +166,7 @@
     height: 10vh;
     background-color: #2a587f;
     margin: auto;
+    border: 5px solid white;
 }
 .tage-3 {
     width: 20vw;
@@ -172,6 +187,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: uppercase;
 }
+
 .tage-3::after{
     content: "";
     display: block;
@@ -195,15 +211,15 @@
 }
 img.hidden {
     display: none;
-  }
+}
   
-  .is-flipped img {
+.is-flipped img {
     display: block;
     width: 100%;
-    height: 70%;
-    margin: 10px auto;
-    background-color: aliceblue;
-  }
+    height: 100%;
+    margin: auto;
+    background-color: white;
+}
   
   .no-clicking {
     pointer-events: none;

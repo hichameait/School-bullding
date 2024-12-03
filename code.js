@@ -1,4 +1,4 @@
-let duration = 1000;
+let duration = 600;
 
 // Select container elements
 let Blockes_Container_left = document.querySelector(".windows-left");
@@ -52,6 +52,28 @@ function flipBlock(selectedBlock) {
   // Show the image
   selectedBlock.querySelector("img").classList.remove("hidden");
 
+  let full_screen = document.querySelector(".fullscreen");
+  full_screen.style.backgroundColor = "#000000";
+  let imagess = selectedBlock.querySelector("img").src
+  full_screen.style.backgroundImage = `url('${imagess.replace("svg", "png")}')`; 
+  full_screen.style.display = "block"
+
+  let container = document.querySelector(".container");
+  container.style.display = "none"
+
+  full_screen.style.backgroundPosition = "center"
+  full_screen.style.backgroundRepeat = "no-repeat"
+
+
+  // Add click event for flipping
+  full_screen.addEventListener("click", function () {
+    full_screen.style.display = "none"
+    container.style.display = "block"
+
+  });
+
+
+
   // Collect all flipped blocks
   let allFlippedBlocks = allBlocks.filter(block =>
     block.classList.contains("is-flipped") && !block.classList.contains("matched")
@@ -61,6 +83,7 @@ function flipBlock(selectedBlock) {
   if (allFlippedBlocks.length === 2) {
     stopClicking();
     checkMatchedBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
+    
   }
 }
 
@@ -91,9 +114,16 @@ function checkMatchedBlocks(block1, block2) {
     // No match: Flip back after the duration
     setTimeout(() => {
       block1.classList.remove("is-flipped");
-      block2.classList.remove("is-flipped");
+
       block1.querySelector("img").classList.add("hidden");
+      block2.classList.remove("is-flipped");
       block2.querySelector("img").classList.add("hidden");
+      
+      // setTimeout(() => {
+      //   block2.classList.remove("is-flipped");
+      //   block2.querySelector("img").classList.add("hidden");
+      // }, 2000);
+      
     }, duration);
   }
 }
